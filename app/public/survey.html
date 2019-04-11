@@ -5,15 +5,12 @@
   <meta charset="UTF-8">
   <title>FriendFinder</title>
 
-  <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-  <!-- Font Awesome Glyphicons -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
-  <!-- Chosen -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 
@@ -36,7 +33,7 @@
     <hr>
 
     <h3><strong>Question 1</strong></h3>
-    <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+    <h4>You love garden gnomes.</h4>
     <select class="chosen-select" id="q1">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -47,7 +44,7 @@
     </select>
 
     <h3><strong>Question 2</strong></h3>
-    <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
+    <h4>Generally speaking, you rely more on your substantial magic ability then you do on technology.</h4>
     <select class="chosen-select" id="q2">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -59,7 +56,7 @@
 
 
     <h3><strong>Question 3</strong></h3>
-    <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+    <h4>You find it easy to stay relaxed and focused even when the world is being destroyed by sentient machines.</h4>
     <select class="chosen-select" id="q3">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -71,7 +68,7 @@
 
 
     <h3><strong>Question 4</strong></h3>
-    <h4>You rarely do something just out of sheer curiosity.</h4>
+    <h4>You are the president of the United States of America.</h4>
     <select class="chosen-select" id="q4">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -83,7 +80,7 @@
 
 
     <h3><strong>Question 5</strong></h3>
-    <h4>People can rarely upset you.</h4>
+    <h4>This question makes no sense in relation to other questions.</h4>
     <select class="chosen-select" id="q5">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -95,7 +92,7 @@
 
 
     <h3><strong>Question 6</strong></h3>
-    <h4>It is often difficult for you to relate to other people’s feelings.</h4>
+    <h4>It is often difficult for you to relate to other people’s pets.</h4>
     <select class="chosen-select" id="q6">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -107,7 +104,7 @@
 
 
     <h3><strong>Question 7</strong></h3>
-    <h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
+    <h4>In a discussion, truth should be more important than people’s favorite color.</h4>
     <select class="chosen-select" id="q7">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -118,7 +115,7 @@
     </select>
 
     <h3><strong>Question 8</strong></h3>
-    <h4>You rarely get carried away by fantasies and ideas.</h4>
+    <h4>You rarely get carried away with your life of crime.</h4>
     <select class="chosen-select" id="q8">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -129,7 +126,7 @@
     </select>
 
     <h3><strong>Question 9</strong></h3>
-    <h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.
+    <h4>Your favorite stories are good tinglers.
     </h4>
     <select class="chosen-select" id="q9">
       <option value=""></option>
@@ -141,7 +138,7 @@
     </select>
 
     <h3><strong>Question 10</strong></h3>
-    <h4>You feel more energetic after spending time with a group of people.</h4>
+    <h4>You feel more energetic after spending time creepily watching strangers.</h4>
     <select class="chosen-select" id="q10">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -154,7 +151,6 @@
     <br>
     <br>
 
-    <!-- Submit Button -->
     <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle"
         aria-hidden="true"></i>
       Submit</button>
@@ -169,11 +165,9 @@
 
   </div>
 
-  <!-- Modal -->
   <div id="results-modal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
-      <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -191,15 +185,8 @@
     </div>
   </div>
 
-
-
 </body>
-<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
 <script type="text/javascript">
-  // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
-  // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-  // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
-  // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
 
   $("#submit").on("click", function (event) {
     event.preventDefault();
@@ -222,11 +209,6 @@
 
     console.log(newFriend);
 
-    // This line is the magic. It"s very similar to the standard ajax function we used.
-    // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-    // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-    // depending on if a tables is available or not.
-
     $.post("/api/friends", newFriend,
       function (data) {
 
@@ -240,18 +222,18 @@
           // Show the modal with the best match
           $("#results-modal").modal("toggle");
         // Clear the form when submitting
-        // $("#name").val("");
-        // $("#photo").val("");
-        // $("#q1").val("");
-        // $("#q2").val("");
-        // $("#q3").val("");
-        // $("#q4").val("");
-        // $("#q5").val("");
-        // $("#q6").val("");
-        // $("#q7").val("");
-        // $("#q8").val("");
-        // $("#q9").val("");
-        // $("#q10").val("");
+        $("#name").val("");
+        $("#photo").val("");
+        $("#q1").val("");
+        $("#q2").val("");
+        $("#q3").val("");
+        $("#q4").val("");
+        $("#q5").val("");
+        $("#q6").val("");
+        $("#q7").val("");
+        $("#q8").val("");
+        $("#q9").val("");
+        $("#q10").val("");
 
       });
 
